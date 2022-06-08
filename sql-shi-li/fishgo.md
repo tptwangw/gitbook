@@ -127,7 +127,7 @@ where event_date = '2022-04-01'
 group by event_type order by event_type
 ```
 
-### **查看事件有多少参数类型**
+### **查看事件有多少种参数**
 
 ```
 select string_params.keys as keys from fgi.event where
@@ -141,7 +141,7 @@ and event_date = '2022-04-01'
 group by keys
 ```
 
-### **查看事件有多少种参数类型，例如RV\_Show有多少种method**
+### **查看事件某一参数有多少种类型，例如RV\_Show有多少种method**
 
 ```
 select string_params['method'] as method from fgi.event where
