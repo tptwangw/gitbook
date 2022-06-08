@@ -123,8 +123,22 @@ group by player_id
 
 ```
 select event_type from fgi.event
-where event_date between '2022-04-01' and '2022-04-30'
+where event_date = '2022-04-01'
 group by event_type order by event_type
+```
+
+### **查看事件有多少参数类型**
+
+```
+select string_params.keys as keys from fgi.event where
+event_type = 'RV_Show'
+and event_date = '2022-04-01'
+group by keys
+
+select int_params.keys as keys from fgi.event where
+event_type = 'RV_Show'
+and event_date = '2022-04-01'
+group by keys
 ```
 
 ### **查看事件有多少种参数类型，例如RV\_Show有多少种method**
